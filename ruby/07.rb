@@ -11,5 +11,5 @@ redis = Redis.new
 
 get '/' do
   events = redis.zrange 'github-events', 0, -1
-  events.map {|e| JSON.parse(e).inspect }.join("<br>")
+  events.map {|e| JSON.parse(e).inspect }.join("")
 end
